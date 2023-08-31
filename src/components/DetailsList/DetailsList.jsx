@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
-import { Link, useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
 import { fetchMovieDetails } from '../service/moviesApp';
+import placeholder from '../../placeholders/placeholder-movie.jpg';
 
 export const DetailsList = () => {
   const { movieId } = useParams();
@@ -30,9 +31,7 @@ export const DetailsList = () => {
 
   return (
     <div>
-      <Link to={location.state?.from || '/'}>
-        <button>Go back</button>
-      </Link>
+      <Link to={location.state?.from || '/'}>Go back</Link>
       <div>
         <h1>{movieDetails.title}</h1>
         <h4>User score: {roundedPopularity}%</h4>
@@ -47,22 +46,22 @@ export const DetailsList = () => {
       </div>
       <div>
         <img
+          width={250}
           src={
             movieDetails.poster_path
               ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
-              : 'https://via.placeholder.com/500x750' // Ваша альтернативна картинка заглушка
+              : `${placeholder}`
           }
           alt={movieDetails.title}
         />
       </div>
       <hr />
       <h3>Additional information</h3>
-      <Link to="cast">
-        <button>Cast</button>
-      </Link>
-      <Link to="reviews">
-        <button>Reviews</button>
-      </Link>
+      <Link to="cast">Cast</Link>
+      <Link to="reviews">Reviews</Link>
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

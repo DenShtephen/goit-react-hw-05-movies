@@ -1,21 +1,30 @@
+import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+
+import './header.css';
 
 export const Header = () => {
   return (
     <>
-      <header>
+      <header className="header">
         <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
+          <ul className="list">
+            <li className="item">
+              <NavLink to="/">
+                <span className="title">Home</span>
+              </NavLink>
             </li>
-            <li>
-              <NavLink to="/movies">Movies</NavLink>
+            <li className="item">
+              <NavLink to="/movies">
+                <span className="title">Movies</span>
+              </NavLink>
             </li>
           </ul>
         </nav>
       </header>
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

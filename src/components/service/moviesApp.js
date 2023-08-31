@@ -22,10 +22,10 @@ export const fetchMovieDetails = async movieId => {
 
 export const MovieSearch = async movieName => {
   const response = await axios.get(`/search/movie?query=${movieName}`, params);
-  return response.data;
+  return response.data.results;
 };
 
-export const MovieCast = async movieId => {
+export const fetchMovieCast = async movieId => {
   const response = await axios.get(`/movie/${movieId}/credits?`, params);
   return response.data.cast;
 };

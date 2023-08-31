@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const MovieList = ({ films }) => {
+  console.log(films);
   return (
     <ul>
       {films.map(movie => (
@@ -18,7 +19,6 @@ MovieList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
-      poster_path: PropTypes.string.isRequired,
     })
   ),
 };
