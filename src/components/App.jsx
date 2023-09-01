@@ -1,7 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './Header/Header';
-import { MovieCast } from './MovieCast/MovieCast';
-import { Reviews } from './Reviews/Revievs';
 import { lazy } from 'react';
 
 const eazyLazy = path => {
@@ -11,6 +9,8 @@ const eazyLazy = path => {
 const Home = eazyLazy('Home');
 const Movies = eazyLazy('Movies');
 const MovieDetails = eazyLazy('MovieDetails');
+const MovieCast = lazy(() => import(`pages/MovieCast/MovieCast`));
+const Reviews = lazy(() => import(`pages/Reviews/Revievs`));
 
 export const App = () => {
   return (

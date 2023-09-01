@@ -1,6 +1,6 @@
 import { MovieList } from 'components/MoviesList/MoviesList';
 import { SearchForm } from 'components/SearchForm/SearchForm';
-import { MovieSearch } from 'components/service/moviesApp';
+import { MovieSearch } from 'service/moviesApp';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

@@ -1,10 +1,9 @@
-import PropTypes from 'prop-types';
-import { fetchMovieCast } from 'components/service/moviesApp';
+import { fetchMovieCast } from 'service/moviesApp';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import placeholder from '../../placeholders/placeholder-actors.jpg';
 
-export function MovieCast() {
+function MovieCast() {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
 
@@ -52,6 +51,4 @@ export function MovieCast() {
   );
 }
 
-MovieCast.propTypes = {
-  movieId: PropTypes.string.isRequired,
-};
+export default MovieCast;
