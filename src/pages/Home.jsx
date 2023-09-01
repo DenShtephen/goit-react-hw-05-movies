@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Trending films</h1>
+      <h1 className="title-home">Trending films</h1>
       <MovieList films={trendingMovies} />
     </div>
   );

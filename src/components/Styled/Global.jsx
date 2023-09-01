@@ -39,6 +39,6 @@ h1,
   }
 
   body {
-    background-color: gray;
+    background-color: #ECECEC;
   }
 `;

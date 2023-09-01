@@ -1,8 +1,16 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
-
+import styled from 'styled-components';
 import './header.css';
+
+const StyledLink = styled(NavLink)`
+  color: grey;
+
+  &.active {
+    color: #87ceeb;
+  }
+`;
 
 export const Header = () => {
   return (
@@ -11,14 +19,14 @@ export const Header = () => {
         <nav>
           <ul className="list">
             <li className="item">
-              <NavLink to="/">
+              <StyledLink to="/">
                 <span className="title">Home</span>
-              </NavLink>
+              </StyledLink>
             </li>
             <li className="item">
-              <NavLink to="/movies">
+              <StyledLink to="/movies">
                 <span className="title">Movies</span>
-              </NavLink>
+              </StyledLink>
             </li>
           </ul>
         </nav>
