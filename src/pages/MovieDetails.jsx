@@ -1,5 +1,7 @@
 import { DetailsList } from 'components/DetailsList/DetailsList';
 
-export function MovieDetails() {
+function MovieDetails() {
   return <DetailsList />;
 }
+
+export default MovieDetails;

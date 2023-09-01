@@ -3,6 +3,7 @@ import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { fetchMovieDetails } from '../service/moviesApp';
 import placeholder from '../../placeholders/placeholder-movie.jpg';
+import { Loader } from 'components/Loader/Loader';
 
 export const DetailsList = () => {
   const { movieId } = useParams();
@@ -26,7 +27,7 @@ export const DetailsList = () => {
   }, [movieId]);
 
   if (!movieDetails) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
@@ -59,9 +60,13 @@ export const DetailsList = () => {
       <h3>Additional information</h3>
       <Link to="cast">Cast</Link>
       <Link to="reviews">Reviews</Link>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </div>
   );
+};
+
+DetailsList.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };

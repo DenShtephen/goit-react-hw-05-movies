@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 import { MovieReviews } from 'components/service/moviesApp';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const Reviews = () => {
@@ -39,4 +40,8 @@ export const Reviews = () => {
       )}
     </>
   );
+};
+
+Reviews.propTypes = {
+  movieId: PropTypes.string.isRequired,
 };

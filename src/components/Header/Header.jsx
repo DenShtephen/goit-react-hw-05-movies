@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 
 import './header.css';
 
@@ -22,7 +23,7 @@ export const Header = () => {
           </ul>
         </nav>
       </header>
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </>

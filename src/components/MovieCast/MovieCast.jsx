@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { fetchMovieCast } from 'components/service/moviesApp';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -50,3 +51,7 @@ export function MovieCast() {
     </div>
   );
 }
+
+MovieCast.propTypes = {
+  movieId: PropTypes.string.isRequired,
+};
