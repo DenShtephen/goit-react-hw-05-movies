@@ -1,10 +1,11 @@
+/* Стилі для заголовка */
 .header {
   padding-top: 20px;
   padding-bottom: 20px;
-
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
+/* Стилі для списку */
 .list {
   display: flex;
   justify-content: space-evenly;
@@ -15,34 +16,35 @@
   margin-bottom: 10px;
 }
 
+/* Стилі для заголовка з анімацією */
 .title {
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   padding: 12px 24px;
   border-radius: 74px;
-  position: relative; /* Додаємо позицію relative для контейнера */
+  position: relative;
 }
 
 .title::before {
-  content: ''; /* Додаємо порожній контент для псевдоелемента */
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0; /* Починаємо з нульової ширини лінії */
-  height: 2px; /* Висота лінії */
+  width: 0;
+  height: 2px;
   background-color: gray;
-  transition: width 0.3s ease; /* Додати анімацію виїзду лінії */
+  transition: width 0.3s ease;
 }
 
 .title:hover::before {
-  width: 100%; /* Змінюємо ширину лінії на 100% при ховері */
+  width: 100%;
 }
 
+/* Стилі для дому */
 .title-home {
   margin-top: 80px;
   margin-bottom: 80px;
-
   color: grey;
   text-align: center;
   font-size: 36px;
@@ -51,8 +53,7 @@
   font-weight: 700;
 }
 
-/* movieList.css */
-
+/* Стилі для списку фільмів */
 .movie-list {
   display: flex;
   flex-wrap: wrap;
@@ -73,20 +74,20 @@
   text-align: center;
   text-decoration: none;
   color: gray;
-  position: relative; /* Додаємо позицію relative для контейнера */
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Додали box-shadow для анімації ліній */
+  position: relative;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .movie-card::before,
 .movie-card::after {
-  content: ''; /* Додаємо порожній контент для псевдоелементів */
+  content: '';
   position: absolute;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ff6347; /* Колір ліній */
-  transition: transform 0.2s; /* Анімація трансформації ліній */
-  transform: scaleX(0); /* Спочатку робимо лінії невидимими */
+  background-color: #ff6347;
+  transition: transform 0.2s;
+  transform: scaleX(0);
 }
 
 .movie-card::before {
@@ -104,11 +105,10 @@
 
 .movie-card:hover::before,
 .movie-card:hover::after {
-  transform: scaleX(1); /* Збільшуємо ширину ліній до 100% при ховері */
+  transform: scaleX(1);
 }
 
-/* searchForm.css */
-
+/* Стилі для форми пошуку */
 .search-form {
   display: flex;
   align-items: center;
@@ -120,7 +120,7 @@
 .search-input {
   width: 300px;
   padding: 10px;
-  border: 2px solid #3498db; /* Синій колір для рамки поля вводу */
+  border: 2px solid #3498db;
   border-radius: 5px;
   font-size: 16px;
   outline: none;
@@ -128,12 +128,12 @@
 }
 
 .search-input::placeholder {
-  color: #3498db; /* Синій колір для тексту плейсхолдера */
+  color: #3498db;
 }
 
 .search-button {
-  background-color: #3498db; /* Синій колір для кнопки пошуку */
-  color: #fff; /* Білий колір для тексту кнопки */
+  background-color: #3498db;
+  color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -144,11 +144,10 @@
 }
 
 .search-button:hover {
-  background-color: #258cd1; /* Змінюємо колір кнопки при наведенні */
+  background-color: #258cd1;
 }
 
-/* movieDetails.css */
-
+/* Стилі для деталей фільму */
 .movie-details-container {
   padding: 20px;
   display: flex;
@@ -160,14 +159,14 @@
 
 .back-link {
   font-size: 18px;
-  color: #3498db; /* Синій колір для посилання "Go back" */
+  color: #3498db;
   text-decoration: none;
   margin-bottom: 20px;
   transition: color 0.3s;
 }
 
 .back-link:hover {
-  color: #258cd1; /* Змінюємо колір при наведенні */
+  color: #258cd1;
 }
 
 .movie-details-content {
@@ -175,7 +174,6 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -193,20 +191,17 @@
 }
 
 .movie-poster:hover {
-  transform: scale(1.05); /* Збільшення масштабу при наведенні */
+  transform: scale(1.05);
 }
 
 .movie-description {
   width: 1000px;
-
   flex: 1;
   text-align: left;
   padding: 20px;
-  /* background-color: #87ceeb; */
   border-radius: 10px;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
     rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
-
   margin-right: 20px;
 }
 
@@ -252,12 +247,12 @@
 .info-link {
   font-size: 18px;
   text-decoration: none;
-  color: #3498db; /* Синій колір для посилань на додаткову інформацію */
+  color: #3498db;
   transition: color 0.3s;
 }
 
 .info-link:hover {
-  color: #258cd1; /* Змінюємо колір при наведенні */
+  color: #258cd1;
 }
 
 .info-link {
@@ -265,7 +260,7 @@
   text-decoration: none;
   color: #fff;
   padding: 10px 20px;
-  background-color: #3498db; /* Синій колір для фону кнопок */
+  background-color: #3498db;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px;
@@ -273,8 +268,8 @@
 }
 
 .info-link:hover {
-  background-color: #ff6347; /* Змінюємо колір фону кнопок при наведенні */
-  color: #fff; /* Змінюємо колір тексту кнопок при наведенні */
+  background-color: #ff6347;
+  color: #fff;
 }
 
 /* Стилі для посилання "Go back" */
@@ -283,7 +278,7 @@
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
-  background-color: #3498db; /* Синій колір для фону кнопки "Go back" */
+  background-color: #3498db;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
   margin-bottom: 20px;
@@ -291,46 +286,40 @@
 }
 
 .back-link:hover {
-  background-color: #ff6347; /* Змінюємо колір фону кнопки "Go back" при наведенні */
-  color: #fff; /* Змінюємо колір тексту кнопки "Go back" при наведенні */
+  background-color: #ff6347;
+  color: #fff;
 }
 
-/* Оновлений CSS для карточок акторів з використанням CSS Grid */
+/* Оновлені стилі для карточок акторів з використанням CSS Grid */
 .cast-list {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* Створюємо 3 колонки з однаковою шириною */
-  gap: 20px; /* Відступи між карточками */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .actor-card {
-  width: 200px; /* Ширина карточки 100% відносно контейнера Grid */
+  width: 250px;
   padding: 20px;
-
   border-radius: 10px;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.3s;
-  display: flex; /* Встановлюємо властивість display на flex */
-  flex-direction: column; /* Розміщення дочірніх елементів у стовпці */
-  align-items: center; /* Вирівнюємо елементи по горизонталі по центру */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .actor-card:hover {
-  transform: scale(1.05); /* Збільшення масштабу при наведенні */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Змінюємо тінь бокса при наведенні */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .actor-wrapper {
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Тінь бокса */
-
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: #87ceeb;
 }
 
-/* Фото актора */
 .actor-image {
   width: 200px;
   height: 300px;
@@ -338,7 +327,6 @@
   margin-bottom: 10px;
 }
 
-/* Ім'я актора */
 .actor-name {
   font-size: 18px;
   font-weight: bold;
@@ -346,14 +334,12 @@
   color: #333;
 }
 
-/* Персонаж, який грає актор */
 .actor-character {
   font-size: 16px;
   color: #444;
-  margin-top: 5px; /* Відступ зверху між іменем та персонажем */
+  margin-top: 5px;
 }
 
-/* Повідомлення, якщо немає інформації про акторів */
 .no-cast-message {
   font-size: 18px;
   color: #555;
@@ -363,10 +349,10 @@
 /* Стилі для компонента Reviews */
 .reviews-container {
   margin: 20px;
-  padding: 20px; /* Білий фон контейнера */
+  padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px; /* Box shadow для контейнера */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
 }
 
 .reviews-title {
@@ -383,7 +369,7 @@
 .review-card {
   margin: 20px;
   padding: 20px;
-  background-color: #fff; /* Білий фон карточки */
+  background-color: #fff;
   border-radius: 10px;
   text-align: left;
   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
