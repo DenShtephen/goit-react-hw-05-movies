@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
 export const SearchForm = ({ onSubmit, nameButton }) => {
   const [text, setText] = useState('');
@@ -20,19 +20,21 @@ export const SearchForm = ({ onSubmit, nameButton }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="search-form" onSubmit={handleSubmit}>
       <input
         required
+        className="search-input"
         value={text}
         type="text"
         placeholder="Find favorite film"
         onChange={handleChange}
       />
-      <button type="submit">{nameButton}</button>
+      <button type="submit" className="search-button">
+        {nameButton}
+      </button>
     </form>
   );
 };
-
 SearchForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   nameButton: PropTypes.string.isRequired,

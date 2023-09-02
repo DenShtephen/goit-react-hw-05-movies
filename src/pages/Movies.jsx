@@ -18,7 +18,7 @@ const Movies = () => {
   };
   return (
     <>
-      <h2>Find you're movie</h2>
+      <h2 className="title-home">Find you're movie</h2>
       <SearchForm onSubmit={handleSubmit} nameButton={'Search Film'} />
       <MovieList films={films} />
     </>

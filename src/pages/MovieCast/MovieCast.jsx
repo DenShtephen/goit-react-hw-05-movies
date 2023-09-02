@@ -24,13 +24,12 @@ function MovieCast() {
     <div>
       {cast.length !== 0 ? (
         <div>
-          <h2>Movie Cast</h2>
-          <ul>
+          <h2 className="title-home">Movie Cast</h2>
+          <ul className="cast-list">
             {cast.map(actor => (
-              <li key={actor.id}>
+              <li key={actor.id} className="actor-card">
                 <img
-                  width="200px"
-                  height="300px"
+                  className="actor-image"
                   src={
                     actor.profile_path
                       ? `https://image.tmdb.org/t/p/w300${actor.profile_path}`
@@ -38,14 +37,18 @@ function MovieCast() {
                   }
                   alt={actor.original_name}
                 />
-                <h3>{actor.name}</h3>
-                <p>{actor.character}</p>
+                <div className="actor-wrapper">
+                  <h3 className="actor-name">{actor.name}</h3>
+                  <p className="actor-character">{actor.character}</p>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       ) : (
-        <div>We don't have any cast for this movie.</div>
+        <div className="no-cast-message">
+          We don't have any cast for this movie.
+        </div>
       )}
     </div>
   );
